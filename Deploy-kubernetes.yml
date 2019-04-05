@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: booksvc
-          image: mcclayac/booksvc:v0.0.4
+          image: mcclayac/booksvc:v0.0.7
           ports:
-            - containerPort: 7070
+            - containerPort: 5050
       nodeSelector:
         storageType: ssd
 

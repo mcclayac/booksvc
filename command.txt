@@ -7,7 +7,9 @@
 #echo "Bash version ${BASH_VERSION}..."
 for i in {0..100}
   do
-      curl -XPOST -d'{"s":"hello, world"}' localhost:7070/uppercase
+      curl -XPOS
+
+      T -d'{"s":"hello, world"}' localhost:7070/uppercase
  done
 
 # Test running from Desktop to minikube  in Kubernetes minikube Loadbalancer
