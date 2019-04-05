@@ -10,10 +10,41 @@ for i in {0..100}
       curl -XPOST -d'{"s":"hello, world"}' localhost:7070/uppercase
  done
 
+# Test running from Desktop to minikube  in Kubernetes minikube Loadbalancer
+#!/bin/bash
+#echo "Bash version ${BASH_VERSION}..."
+for i in {0..100}
+  do
+      curl -XPOST -d'{"s":"hello, world"}' http://192.168.99.100:32651/hostname
+    done
+
+# Inseide Kubernetes .. Service DNS lookup
+booksrv-load-balancer.default.svc.cluster.local
+
+root@load-generator-ubuntu-5f5cb4dd8d-pmcp7:/# nslookup booksrv-load-balancer.default.svc.cluster.local
+Server:		10.96.0.10
+Address:	10.96.0.10#53
+
+Name:	booksrv-load-balancer.default.svc.cluster.local
+Address: 10.99.95.86
+
+
+# Verify the kube-dns
+#!/bin/bash
+#echo "Bash version ${BASH_VERSION}..."
+for i in {0..100}
+  do
+      curl -XPOST -d'{"s":"hello, world"}' http://booksrv-load-balancer.default.svc.cluster.local:7070/hostname
+    done
+
+
+
+
+
 curl -XPOST -d'{"id":1}' http://192.168.99.100:32651/book | jq
 
 
-docker build . -t mcclayac/booksvc:v0.0.2
+docker build . -t mcclayac/booksvc:v0.0.6
 
 k8 apply -f ./
 

@@ -91,6 +91,6 @@ func main() {
 	// ---------------------------------------
 	http.Handle("/hostname", hostHandler)
 
-	logger.Log("msg", "HTTP", "addr", ":7070")
-	logger.Log("err", http.ListenAndServe(":7070", nil))
+	logger.Log("msg", "HTTP", "addr", ":5050")
+	logger.Log("err", http.ListenAndServe(":5050", nil))
 }
