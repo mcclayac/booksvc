@@ -1,15 +1,82 @@
 
 
+github.com/prometheus/client_golang (download)
+github.com/beorn7/perks (download)
+github.com/golang/protobuf (download)
+github.com/prometheus/client_model (download)
+github.com/prometheus/common (download)
+github.com/matttproud/golang_protobuf_extensions (download)
+github.com/prometheus/procfs (download)
+github.com/beorn7/perks/quantile
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+github.com/golang/protobuf/proto
+github.com/prometheus/common/model
+github.com/prometheus/procfs
+github.com/prometheus/client_model/go
+github.com/matttproud/golang_protobuf_extensions/pbutil
+github.com/prometheus/common/expfmt
+github.com/prometheus/client_golang/prometheus/internal
+github.com/prometheus/client_golang/prometheus
+github.com/prometheus/client_golang/prometheus/graphite
+github.com/prometheus/client_golang/prometheus/promauto
+github.com/prometheus/client_golang/prometheus/promhttp
+github.com/prometheus/client_golang/prometheus/push
+github.com/prometheus/client_golang/prometheus/testutil
 
+github.com/go-kit/kit (download)
+github.com/go-logfmt/logfmt (download)
+github.com/go-stack/stack (download)
+github.com/sirupsen/logrus (download)
+Fetching https://golang.org/x/sys/unix?go-get=1
+Parsing meta tags from https://golang.org/x/sys/unix?go-get=1 (status code 200)
+get "golang.org/x/sys/unix": found meta tag get.metaImport{Prefix:"golang.org/x/sys", VCS:"git", RepoRoot:"https://go.googlesource.com/sys"} at https://golang.org/x/sys/unix?go-get=1
+get "golang.org/x/sys/unix": verifying non-authoritative meta tag
+Fetching https://golang.org/x/sys?go-get=1
+Parsing meta tags from https://golang.org/x/sys?go-get=1 (status code 200)
+golang.org/x/sys (download)
+Fetching https://go.uber.org/zap?go-get=1
+Parsing meta tags from https://go.uber.org/zap?go-get=1 (status code 200)
+get "go.uber.org/zap": found meta tag get.metaImport{Prefix:"go.uber.org/zap", VCS:"git", RepoRoot:"https://github.com/uber-go/zap"} at https://go.uber.org/zap?go-get=1
+go.uber.org/zap (download)
+Fetching https://go.uber.org/atomic?go-get=1
+Parsing meta tags from https://go.uber.org/atomic?go-get=1 (status code 200)
+get "go.uber.org/atomic": found meta tag get.metaImport{Prefix:"go.uber.org/atomic", VCS:"git", RepoRoot:"https://github.com/uber-go/atomic"} at https://go.uber.org/atomic?go-get=1
+go.uber.org/atomic (download)
+Fetching https://go.uber.org/multierr?go-get=1
+Parsing meta tags from https://go.uber.org/multierr?go-get=1 (status code 200)
+get "go.uber.org/multierr": found meta tag get.metaImport{Prefix:"go.uber.org/multierr", VCS:"git", RepoRoot:"https://github.com/uber-go/multierr"} at https://go.uber.org/multierr?go-get=1
+go.uber.org/multierr (download)
+Fetching https://go.uber.org/zap/zapcore?go-get=1
+Parsing meta tags from https://go.uber.org/zap/zapcore?go-get=1 (status code 200)
+get "go.uber.org/zap/zapcore": found meta tag get.metaImport{Prefix:"go.uber.org/zap", VCS:"git", RepoRoot:"https://github.com/uber-go/zap"} at https://go.uber.org/zap/zapcore?go-get=1
+get "go.uber.org/zap/zapcore": verifying non-authoritative meta tag
+Fetching https://go.uber.org/zap?go-get=1
+Parsing meta tags from https://go.uber.org/zap?go-get=1 (status code 200)
+go.uber.org/zap/buffer
+go.uber.org/atomic
+go.uber.org/zap/internal/exit
+github.com/go-logfmt/logfmt
+golang.org/x/sys/unix
+go.uber.org/multierr
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/zapcore
+github.com/go-kit/kit/log
+github.com/go-kit/kit/log/deprecated_levels
+github.com/go-kit/kit/log/level
+github.com/go-kit/kit/log/term
+github.com/go-kit/kit/log/syslog
+go.uber.org/zap
+github.com/sirupsen/logrus
+github.com/go-kit/kit/log/zap
+github.com/go-kit/kit/log/logrus
 
 
 #!/bin/bash
 #echo "Bash version ${BASH_VERSION}..."
 for i in {0..100}
   do
-      curl -XPOS
-
-      T -d'{"s":"hello, world"}' localhost:7070/uppercase
+      curl -XPOS -d'{"s":"hello, world"}' localhost:5050/uppercase
  done
 
 # Test running from Desktop to minikube  in Kubernetes minikube Loadbalancer
@@ -40,6 +107,8 @@ for i in {0..100}
     done
 
 
+mcclayac@winman-virtual-machine:~/go/src/booksvc$ curl -XPOST -d'{"id":1}' http://localhost:5050/book
+{"book":{"ID":0,"Title":"","Author":"","Date":"","Publisher":""}}
 
 
 
